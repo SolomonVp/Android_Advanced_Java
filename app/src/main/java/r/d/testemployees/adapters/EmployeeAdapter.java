@@ -33,7 +33,7 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
     public void onBindViewHolder(@NonNull EmployeeViewHolder employeeViewHolder, int i) {
         Employee employee = employees.get(i);
         employeeViewHolder.textViewName.setText(employee.getName());
-        employeeViewHolder.textViewLastName.setText(employee.getlName());
+        employeeViewHolder.textViewLastName.setText(employee.getLastName());
     }
 
     @Override

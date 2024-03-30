@@ -9,7 +9,7 @@ public class EmployeeResponse {
     @SerializedName("response")
     @Expose
     private List<Employee> response;
-    public List<Employee> getResponse() {
+    public List<Employee> getEmployees() {
         return response;
     }
     public void setResponse(List<Employee> response) {
