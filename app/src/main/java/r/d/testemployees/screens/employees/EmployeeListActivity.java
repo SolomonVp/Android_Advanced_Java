@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ import r.d.testemployees.api.ApiFactory;
 import r.d.testemployees.api.ApiService;
 import r.d.testemployees.pojo.Employee;
 import r.d.testemployees.pojo.EmployeeResponse;
+import r.d.testemployees.pojo.Speciality;
 
 public class EmployeeListActivity extends AppCompatActivity {
 
@@ -44,6 +46,15 @@ public class EmployeeListActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<Employee> employees) {
                 adapter.setEmployees(employees);
+                if (employees != null) {
+                    for (Employee employee : employees) {
+                        List<Speciality> specialities = employee.getSpecialty();
+                        for (Speciality speciality : specialities) {
+                            Log.i("Speciality", speciality.getName());
+                        }
+                    }
+                }
+
             }
         });
         viewModel.getErrors().observe(this, new Observer<Throwable>() {
